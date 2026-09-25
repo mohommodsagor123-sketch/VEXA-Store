@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VEXA | Online Store</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,sans-serif;background:#090909;color:#fff;line-height:1.5}
+a{text-decoration:none;color:inherit}nav{position:sticky;top:0;z-index:9;background:#090909ee;border-bottom:1px solid #292929}
+.nav{max-width:1100px;margin:auto;padding:15px 20px;display:flex;justify-content:space-between;align-items:center}.logo{font-size:25px;font-weight:900;letter-spacing:7px}
+.links{display:flex;gap:20px;color:#aaa;font-size:14px}.hero,section{max-width:1100px;margin:auto;padding:65px 20px}.hero{min-height:65vh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:35px}
+.kicker{color:#e8dcc8;letter-spacing:5px;font-size:12px;margin-bottom:15px}h1{font-size:clamp(48px,8vw,82px);line-height:.95;margin-bottom:18px}.hero p{color:#aaa;font-size:18px;max-width:570px}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.btn{padding:12px 20px;border:1px solid #777;border-radius:28px;font-weight:bold}.primary{background:#fff;color:#111;border-color:#fff}
+.visual{height:340px;border:1px solid #292929;border-radius:28px;background:radial-gradient(circle,#303030,#101010 65%);display:flex;align-items:center;justify-content:center}.visual b{font-size:115px;letter-spacing:10px}
+.title{font-size:34px}.sub{color:#999;margin:7px 0 25px}.products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.product{background:#141414;border:1px solid #292929;border-radius:18px;overflow:hidden}.pic{height:200px;background:linear-gradient(135deg,#292929,#101010);display:flex;align-items:center;justify-content:center;font-size:45px;color:#777}.info{padding:18px}.info p{color:#999;font-size:14px}.price{font-size:20px;font-weight:bold;margin:10px 0}.order{display:block;text-align:center;background:#fff;color:#111;padding:10px;border-radius:25px;font-weight:bold}
+.formbox{max-width:700px;background:#141414;border:1px solid #292929;border-radius:20px;padding:22px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{margin-bottom:13px}label{display:block;color:#bbb;font-size:13px;margin-bottom:6px}input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #383838;background:#0c0c0c;color:#fff;outline:none}textarea{min-height:90px;resize:vertical}.submit{width:100%;padding:13px;border:0;border-radius:25px;background:#fff;color:#111;font-weight:bold;font-size:15px}
+.payments{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}.pay{padding:20px;background:#141414;border:1px solid #292929;border-radius:16px}.pay p{color:#999;font-size:13px;margin-top:5px}.contact{display:grid;grid-template-columns:1fr 1fr;gap:15px}.box{padding:22px;background:#141414;border:1px solid #292929;border-radius:17px}.box a{color:#e8dcc8;display:block;margin-top:7px;word-break:break-all}
+footer{text-align:center;padding:28px;border-top:1px solid #292929;color:#666;font-size:13px}
+@media(max-width:760px){.links{display:none}.hero{grid-template-columns:1fr;padding-top:45px}.visual{height:230px}.visual b{font-size:75px}.products,.payments,.contact{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="nav"><a class="logo" href="#">VEXA</a><div class="links"><a href="#products">Products</a><a href="#order">Order</a><a href="#payment">Payment</a><a href="#contact">Contact</a></div></div></nav>
+
+<div class="hero" id="home">
+<div><div class="kicker">WELCOME TO VEXA</div><h1>Shop Different.</h1><p>Useful, stylish and interesting products — delivered with a simple ordering experience.</p>
+<div class="btns"><a class="btn primary" href="#products">Shop Now →</a><a class="btn" href="https://wa.me/8801316762348" target="_blank">WhatsApp</a></div></div>
+<div class="visual"><b>V</b></div>
+</div>
+
+<section id="products"><h2 class="title">Featured Products</h2><p class="sub">Replace these sample products with your real products.</p>
+<div class="products">
+<div class="product"><div class="pic">01</div><div class="info"><h3>VEXA Product One</h3><p>Sample product description.</p><div class="price">৳ 999</div><a class="order" href="#order">Order Now</a></div></div>
+<div class="product"><div class="pic">02</div><div class="info"><h3>VEXA Product Two</h3><p>Sample product description.</p><div class="price">৳ 1,499</div><a class="order" href="#order">Order Now</a></div></div>
+<div class="product"><div class="pic">03</div><div class="info"><h3>VEXA Product Three</h3><p>Sample product description.</p><div class="price">৳ 1,999</div><a class="order" href="#order">Order Now</a></div></div>
+</div></section>
+
+<section id="order"><h2 class="title">Place Your Order</h2><p class="sub">Fill in the form. It will open WhatsApp with your order details.</p>
+<div class="formbox">
+<form onsubmit="sendOrder(event)">
+<div class="row"><div class="field"><label>Your Name</label><input id="name" required></div><div class="field"><label>Phone Number</label><input id="phone" required></div></div>
+<div class="field"><label>Product</label><select id="product"><option>VEXA Product One — ৳999</option><option>VEXA Product Two — ৳1,499</option><option>VEXA Product Three — ৳1,999</option></select></div>
+<div class="row"><div class="field"><label>Quantity</label><input id="qty" type="number" min="1" value="1" required></div><div class="field"><label>Payment</label><select id="paymentMethod"><option>bKash</option><option>Nagad</option></select></div></div>
+<div class="field"><label>Delivery Address</label><textarea id="address" required></textarea></div>
+<button class="submit">Send Order on WhatsApp</button>
+</form></div></section>
+
+<section id="payment"><h2 class="title">Payment Methods</h2><p class="sub">Payment numbers can be added when you're ready.</p>
+<div class="payments">
+<div class="pay"><h3>📱 bKash</h3><p>Payment number: <b>01869873739</b></p></div>
+<div class="pay"><h3>📱 Nagad</h3><p>Payment number: <b>ADD NAGAD NUMBER</b></p></div>
+</div></section>
+
+<section id="contact"><h2 class="title">Contact VEXA</h2><p class="sub">Questions? Contact us directly.</p><div class="contact">
+<div class="box"><h3>WhatsApp / Phone</h3><a href="https://wa.me/8801316762348" target="_blank">01316-762348</a></div>
+<div class="box"><h3>Facebook</h3><a href="https://www.facebook.com/share/1G38RMQKC7/" target="_blank">Visit VEXA Facebook →</a></div>
+</div></section>
+
+<footer>© 2026 VEXA. All Rights Reserved.</footer>
+<script>
+function sendOrder(e){
+ e.preventDefault();
+ const msg=`Hello VEXA, I want to place an order.%0A%0AName: ${encodeURIComponent(document.getElementById('name').value)}%0APhone: ${encodeURIComponent(document.getElementById('phone').value)}%0AProduct: ${encodeURIComponent(document.getElementById('product').value)}%0AQuantity: ${encodeURIComponent(document.getElementById('qty').value)}%0APayment: ${encodeURIComponent(document.getElementById('paymentMethod').value)}%0AAddress: ${encodeURIComponent(document.getElementById('address').value)}`;
+ window.open('https://wa.me/8801316762348?text='+msg,'_blank');
+}
+</script>
+</body>
+</html>
